@@ -11,8 +11,8 @@ const style = {
 };
 
 const saWebappApiHostnames = {
-    production: 'http://sa-webapp.jx-production.35.197.230.174.nip.io/sentiment',
-    staging: 'http://sa-webapp.jx-staging.35.197.230.174.nip.io/sentiment'
+    production: 'http://sa-webapp.jx-production.35.197.230.174.nip.io',
+    staging: 'http://sa-webapp.jx-staging.35.197.230.174.nip.io'
 };
 
 class App extends Component {
