@@ -10,6 +10,11 @@ const style = {
     marginLeft: 12,
 };
 
+const saWebappApiHostnames = {
+    production: 'http://sa-webapp.jx-production.35.197.230.174.nip.io/sentiment',
+    staging: 'http://sa-webapp.jx-staging.35.197.230.174.nip.io/sentiment'
+};
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +25,9 @@ class App extends Component {
     };
 
     analyzeSentence() {
-        fetch('http://localhost:8080/sentiment', {
+        const saWebappApiHostname = process.env.NODE_ENV === 'production' ? saWebappApiHostnames.production : saWebappApiHostnames.staging;
+
+        fetch(saWebappApiHostname + '/sentiment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
